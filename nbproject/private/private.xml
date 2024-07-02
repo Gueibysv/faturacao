@@ -4,12 +4,15 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Gueiby%20SIlva/Documents/NetBeansProjects/Faturacao/src/faturacao/Clientes.java</file>
+            <file>file:/C:/Users/Gueiby%20SIlva/Documents/NetBeansProjects/Faturacao/src/faturacao/ReportView.java</file>
+            <file>file:/C:/Users/Gueiby%20SIlva/Documents/NetBeansProjects/Faturacao/src/faturacao/Fatura.java</file>
+            <file>file:/C:/Users/Gueiby%20SIlva/Documents/NetBeansProjects/Faturacao/src/faturacao/Login.java</file>
+            <file>file:/C:/Users/Gueiby%20SIlva/Documents/NetBeansProjects/Faturacao/src/faturacao/Stock.java</file>
             <file>file:/C:/Users/Gueiby%20SIlva/Documents/NetBeansProjects/Faturacao/src/faturacao/Fornecedor.java</file>
-            <file>file:/C:/Users/Gueiby%20SIlva/Documents/NetBeansProjects/Faturacao/src/faturacao/Connection.java</file>
             <file>file:/C:/Users/Gueiby%20SIlva/Documents/NetBeansProjects/Faturacao/src/faturacao/Produto.java</file>
-            <file>file:/C:/Users/Gueiby%20SIlva/Documents/NetBeansProjects/Faturacao/src/faturacao/JpanelLoader.java</file>
-            <file>file:/C:/Users/Gueiby%20SIlva/Documents/NetBeansProjects/Faturacao/src/faturacao/Funcionario.java</file>
+            <file>file:/C:/Users/Gueiby%20SIlva/Documents/NetBeansProjects/Faturacao/src/faturacao/Relatorio.java</file>
             <file>file:/C:/Users/Gueiby%20SIlva/Documents/NetBeansProjects/Faturacao/src/faturacao/Home.java</file>
+            <file>file:/C:/Users/Gueiby%20SIlva/Documents/NetBeansProjects/Faturacao/src/faturacao/Venda.java</file>
         </group>
     </open-files>
 </project-private>
