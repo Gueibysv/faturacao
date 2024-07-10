@@ -59,7 +59,7 @@ public class Fatura extends javax.swing.JPanel {
              DefaultTableModel dt = (DefaultTableModel) jTable1.getModel();
             dt.setRowCount(0);
             Statement s = db.mycon().createStatement();
-            ResultSet rs = s.executeQuery("Select *from venda where id_fatura like '%"+id_fatura+"%' and nome_cliente like '%"+cliente+"%' and estado like '%"+estado+"%'");
+            ResultSet rs = s.executeQuery("Select *from venda where id_fatura like '%"+id_fatura+"%' or nome_cliente like '%"+cliente+"%' or estado like '%"+estado+"%'");
             while(rs.next()){
              Vector v = new Vector ();
              v.add(rs.getString(1));

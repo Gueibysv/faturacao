@@ -79,7 +79,7 @@ public class Venda extends javax.swing.JPanel {
         }
     //Somar novo id_fatura
     int i = Integer.valueOf(id_fatura.getText());
-    i++;
+        i++;
     id_fatura.setText(String.valueOf(i));
     
     }
@@ -106,7 +106,9 @@ public class Venda extends javax.swing.JPanel {
             int valor = Integer.valueOf(jTable1.getValueAt(i, 3).toString());
             totals +=valor;
         }
-        quantidade_total.setText(Integer.toString(totals));
+        
+        
+        
     }
     public void total (){
     
@@ -153,7 +155,9 @@ public class Venda extends javax.swing.JPanel {
          int newquantidade = Integer.valueOf(quantidade);
              try {
                 Statement s = db.mycon().createStatement(); 
+                if(newquantidade>=0){
                 s.executeUpdate("Update produtos set quantidade = '"+newquantidade+"' where codigo_barra ='"+codigob+"'");
+                }
              } catch (Exception e) {
                  JOptionPane.showMessageDialog (null,e);
                  System.out.println("aqui");
@@ -652,10 +656,12 @@ public class Venda extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // adicionar no carrinho
-        int st_sell = Integer.valueOf(p_quantidade.getText());
-        int st_qtd = Integer.valueOf(stock_qtd.getText());
-        
-        if (st_sell<st_qtd){
+        int st_sell = Integer.valueOf(p_quantidade.getText());//inserir para comprar
+        int st_qtd = Integer.valueOf(stock_qtd.getText());//estoque
+        int verif = st_qtd-st_sell;
+        if (st_sell<=st_qtd && verif >=0 ){
+            String alter = String.valueOf(verif);
+            stock_qtd.setText(alter);
         DefaultTableModel dt =(DefaultTableModel) jTable1.getModel();
         Vector v = new Vector();
         v.add(id_fatura.getText());
@@ -670,7 +676,7 @@ public class Venda extends javax.swing.JPanel {
     
         }else{
         
-        JOptionPane.showMessageDialog (null, "Stock tem "+st_qtd+"quantidade apenas");
+        JOptionPane.showMessageDialog (null, "Stock tem "+st_qtd+" unidades apenas");
         }
         
     }//GEN-LAST:event_jButton2ActionPerformed

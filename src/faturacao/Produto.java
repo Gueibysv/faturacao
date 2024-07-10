@@ -367,11 +367,15 @@ public class Produto extends javax.swing.JPanel {
             System.out.println(e);
             JOptionPane.showMessageDialog (null,e);
         }
-         tb_load();
+        
+            tb_load();
         
         }
+        
         else {
-        JOptionPane.showMessageDialog (null,"Erro: falha ao salvar, valores não aceites, tente novamente");
+        
+            JOptionPane.showMessageDialog (null,"Erro: falha ao salvar, valores não aceites, tente novamente");
+        
         }
         
         
@@ -379,18 +383,24 @@ public class Produto extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // botão para procurar
+        
         String procurar = p_src.getText();
+        
         try {
+         
          Statement s = db.mycon().createStatement();
+         
          ResultSet rs = s.executeQuery("select *from produtos where id_produto = '"+procurar+"'");
+         
          if(rs.next()){
+            
              p_nome.setText(rs.getString("nome_produto"));
              p_codigob.setText(rs.getString("codigo_barra"));
              p_preco.setText(rs.getString("preco"));
              p_quantidade.setText(rs.getString("quantidade"));
              p_fornecedor.setText(rs.getString("id_fornecedor"));
-            
              JOptionPane.showMessageDialog (null,"produto encontrado");
+             
             }
           else{
              JOptionPane.showMessageDialog (null,"Erro: produto não encontrado, tente novamente");
@@ -419,14 +429,17 @@ public class Produto extends javax.swing.JPanel {
         if(verifpreco>0 && verifquantidade>0){
         
         try {
+            
             Statement s = db.mycon().createStatement();
             s.executeUpdate("Update produtos SET nome_produto = '"+nome+"', codigo_barra = '"+codigob+"', preco = '"+preco+"', quantidade = '"+quantidade+"', id_fornecedor = '"+fornecedor+"' "
                     + "where id_produto = '"+id_produto+"'");
             JOptionPane.showMessageDialog (null,"Produto atualizado");
 
         } catch (Exception e) {
-           JOptionPane.showMessageDialog (null,"Erro: Falha ao atualizar o produto, tente novamente");
+            
+            JOptionPane.showMessageDialog (null,"Erro: Falha ao atualizar o produto, tente novamente");
             JOptionPane.showMessageDialog (null,e);
+            
         }
          tb_load();
         
@@ -476,7 +489,9 @@ public class Produto extends javax.swing.JPanel {
     private void p_src1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_p_src1KeyReleased
         // TODO add your handling code here:
         String nome = p_src1.getText();
+        
         try {
+        
             DefaultTableModel dt = (DefaultTableModel) jTable1.getModel();
             dt.setRowCount(0);
             Statement s = db.mycon().createStatement();
